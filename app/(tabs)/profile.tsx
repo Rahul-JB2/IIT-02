@@ -1,15 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function ProfileScreen() {
-  return (
-    <View style={styles.page}>
-      <Text style={styles.title}>Profile</Text>
-      <Text style={styles.text}>Native profile, Firebase authentication and progress settings will be connected during the next migration phase.</Text>
-    </View>
-  );
-}
-const styles=StyleSheet.create({
-  page:{flex:1,backgroundColor:'#050818',padding:24,paddingTop:70},
-  title:{color:'#F8FAFC',fontSize:30,fontWeight:'800'},
-  text:{color:'#94A3B8',fontSize:15,lineHeight:23,marginTop:12}
-});
+import { ScrollView,StyleSheet,Text,View,Pressable } from 'react-native';
+import { useState } from 'react-native';
+export default function ProfileScreen(){const [dark,setDark]=useState(true),[rem,setRem]=useState(true);return <ScrollView style={s.page} contentContainerStyle={s.content}><View style={s.avatar}><Text style={s.avatarText}>J</Text></View><Text style={s.title}>JEE 2027 Student</Text><Text style={s.sub}>IIT Super-50 • JEE Main 2027</Text><View style={s.card}><Text style={s.section}>Study Profile</Text><Row l="Target exam" v="JEE Main 2027"/><Row l="Subjects" v="Physics • Chemistry • Mathematics"/><Row l="Mode" v="Offline + Local Data"/></View><View style={s.card}><Text style={s.section}>Settings</Text><Toggle l="Dark theme" on={dark} set={setDark}/><Toggle l="Study reminders" on={rem} set={setRem}/></View><View style={s.card}><Text style={s.section}>Data & Privacy</Text><Text style={s.muted}>Current native progress features use local device data. Firebase sync/auth will be connected later.</Text><View style={s.action}><Text style={s.actionText}>Local Data • Active</Text></View></View><View style={s.card}><Text style={s.section}>App</Text><Row l="Version" v="IIT-02 • 1.0.0"/><Row l="Platform" v="Native Android / Expo"/></View></ScrollView>}
+function Row({l,v}:{l:string,v:string}){return <View style={s.row}><Text style={s.label}>{l}</Text><Text style={s.value}>{v}</Text></View>}
+function Toggle({l,on,set}:{l:string,on:boolean,set:(x:boolean)=>void}){return <Pressable style={s.row} onPress={()=>set(!on)}><Text style={s.label}>{l}</Text><View style={[s.toggle,on&&s.on]}><View style={[s.dot,on&&s.dotOn]}/></View></Pressable>}
+const s=StyleSheet.create({page:{flex:1,backgroundColor:'#050818'},content:{padding:20,paddingTop:58,paddingBottom:100},avatar:{width:76,height:76,borderRadius:24,backgroundColor:'#17324D',borderWidth:1,borderColor:'#38BDF8',alignItems:'center',justifyContent:'center',alignSelf:'center'},avatarText:{color:'#7DD3FC',fontSize:34,fontWeight:'900'},title:{color:'#F8FAFC',fontSize:25,fontWeight:'900',textAlign:'center',marginTop:12},sub:{color:'#64748B',textAlign:'center',fontSize:11,marginTop:4,marginBottom:18},card:{backgroundColor:'#0A1024',borderWidth:1,borderColor:'#182442',borderRadius:17,padding:15,marginBottom:12},section:{color:'#F8FAFC',fontSize:15,fontWeight:'800',marginBottom:8},row:{flexDirection:'row',justifyContent:'space-between',alignItems:'center',paddingVertical:11,borderTopWidth:1,borderTopColor:'#182442'},label:{color:'#94A3B8',fontSize:11},value:{color:'#CBD5E1',fontSize:11,fontWeight:'700',maxWidth:'60%',textAlign:'right'},toggle:{width:42,height:23,borderRadius:15,backgroundColor:'#24304A',padding:3},on:{backgroundColor:'#155E75'},dot:{width:17,height:17,borderRadius:9,backgroundColor:'#64748B'},dotOn:{marginLeft:19,backgroundColor:'#7DD3FC'},muted:{color:'#94A3B8',fontSize:11,lineHeight:17},action:{marginTop:12,padding:11,borderRadius:10,backgroundColor:'#102A2A',borderWidth:1,borderColor:'#1D6B5C',alignItems:'center'},actionText:{color:'#6EE7B7',fontWeight:'800',fontSize:11}});
