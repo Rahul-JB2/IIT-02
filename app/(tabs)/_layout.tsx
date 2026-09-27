@@ -46,6 +46,10 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="scores"
+        options={{title:'Scores',tabBarIcon:({color,size})=><Ionicons name="stats-chart-outline" color={color} size={size}/>}}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title:'Profile',
