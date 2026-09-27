@@ -1,0 +1,21 @@
+{
+  "expo":{
+    "name":"IIT Super-50",
+    "slug":"iit-super-50",
+    "version":"1.0.0",
+    "orientation":"portrait",
+    "userInterfaceStyle":"dark",
+    "scheme":"iitsuper50",
+    "android":{
+      "package":"com.rahuljb2.iitsuper50",
+      "adaptiveIcon":{
+        "backgroundColor":"#050818"
+      },
+      "edgeToEdgeEnabled":true
+    },
+    "plugins":["expo-router"],
+    "experiments":{
+      "typedRoutes":true
+    }
+  }
+}
