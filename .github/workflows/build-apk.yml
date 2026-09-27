@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Align Expo SDK dependencies
-        run: npx expo install --fix
+        run: npx expo install --fix -- --legacy-peer-deps
       - name: Generate Android project
         run: npx expo prebuild --platform android --no-install
       - name: Setup Java
