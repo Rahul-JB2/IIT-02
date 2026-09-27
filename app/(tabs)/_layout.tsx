@@ -58,6 +58,10 @@ export default function TabsLayout() {
         options={{title:'Rewards',tabBarIcon:({color,size})=><Ionicons name="flame-outline" color={color} size={size}/>}}
       />
       <Tabs.Screen
+        name="strategy"
+        options={{title:'Strategy',tabBarIcon:({color,size})=><Ionicons name="compass-outline" color={color} size={size}/>}}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title:'Profile',
