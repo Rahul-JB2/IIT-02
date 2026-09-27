@@ -4,7 +4,6 @@
     "slug": "iit-super-50",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "dark",
     "scheme": "iitsuper50",
     "android": {
       "package": "com.rahuljb2.iitsuper50",
