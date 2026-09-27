@@ -62,6 +62,10 @@ export default function TabsLayout() {
         options={{title:'Strategy',tabBarIcon:({color,size})=><Ionicons name="compass-outline" color={color} size={size}/>}}
       />
       <Tabs.Screen
+        name="quiz"
+        options={{title:'Quiz',tabBarIcon:({color,size})=><Ionicons name="help-circle-outline" color={color} size={size}/>}}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title:'Profile',
